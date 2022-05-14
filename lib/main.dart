@@ -16,19 +16,21 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:[
-            Icon(Icons.add_card),
-            Icon(Icons.star)
-          ]
+        appBar: AppBar(
+          title: Text('앱임')
+        ),
+        body: Text(('안녕')
         ),
         bottomNavigationBar: BottomAppBar(
-          child: Text('책 읽을까')
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Icon(Icons.phone),
+            Icon(Icons.message),
+            Icon(Icons.contact_page_outlined)
+          ],
         ),
-      )
-
+      ))
     );
   }
 }

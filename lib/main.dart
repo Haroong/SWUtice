@@ -11,55 +11,49 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
-      home: Scaffold(
-          appBar: AppBar(title: Text('Study Flutter'), actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.search),
-            ),
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blueGrey,
+        ),
+        home: Scaffold(
+          appBar: AppBar(title: Text('Flutter'), actions: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Icon(Icons.menu),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.notifications),
-            )
           ]),
-          body: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 150,
-              child: Row(children: [
-                Image.network(
-                  'https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/201706/23/b71449f8-e830-45a0-bb4d-7b1a328e19f2.jpg',
-                  width: 300,
-                  height: 150,
-                ),
-                Container(
-                  width: 300,
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Flexible(
-                            child: Text('Title',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 30)),
-                            flex: 5),
-                        Flexible(child: Text('@location'), flex: 5),
-                        Flexible(child: Text('price'), flex: 5),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [Icon(Icons.favorite), Text('100')])
-                      ]),
-                ),
-              ]),
-            ),
-          )),
+          bottomNavigationBar: AppBottomBar(),
+          body: ListView(
+            children: [
+              Row(
+                children: [Icon(Icons.person), Text('HongGilDong')],
+              ),
+              Row(
+                children: [Icon(Icons.person), Text('HongGilDong')],
+              ),
+              Row(
+                children: [Icon(Icons.person), Text('HongGilDong')],
+              )
+            ],
+          ),
+        ));
+  }
+}
+
+class AppBottomBar extends StatelessWidget {
+  const AppBottomBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomAppBar(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Icon(Icons.phone),
+          Icon(Icons.message),
+          Icon(Icons.person_outline),
+        ],
+      ),
     );
   }
 }
